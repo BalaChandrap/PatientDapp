@@ -3,9 +3,13 @@ import "./ECVerify.sol";
 
 contract Patient {
   
- public address owner;
+  address  owner;
 
- public string data;
+  string  data;
+
+  function Patient(){
+    data = "I am the data";
+  }
 
  function addData(string _data,address _owner) constant returns(bool)
  {
@@ -20,14 +24,15 @@ contract Patient {
 
  function getData(address _owner,bytes32 msghash,bytes sighash) constant returns (string)
  {
-
+    
   if(ECVerify.ecverify(msghash, sighash, owner))
    {
       return data;
    }
-   
-   throw;
-
+   else
+   {
+     return "Permission denied";
+   }
  }
  
 

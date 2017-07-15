@@ -36,6 +36,7 @@ function getResource(){
   	   setStatus("Successfully stored "+tempString);
     },function(error){
   	  console.log("Error!",error);
+      alert("error"+response);
   	   setStatus("error"+response);
     }
   );
