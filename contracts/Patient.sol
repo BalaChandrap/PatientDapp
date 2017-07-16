@@ -7,10 +7,6 @@ contract Patient {
 
   string  data;
 
-  function Patient(){
-    data = "I am the data";
-  }
-
  function addData(string _data,address _owner) constant returns(bool)
  {
 
